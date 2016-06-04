@@ -4,12 +4,7 @@ import android.app.Activity;
 import android.os.Bundle;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
-import android.view.View;
-import android.view.ViewDebug;
-<<<<<<< HEAD
 import android.view.ViewGroup;
-=======
->>>>>>> 0b77fb012135c2f9b8d17b52470acd6069af4e59
 
 public class MainActivity extends Activity {
 
@@ -27,7 +22,6 @@ public class MainActivity extends Activity {
         recyclerView = (RecyclerView) findViewById(R.id.id_rv_recyclerview);
         recyclerView.setLayoutManager(new LinearLayoutManager(this));
 
-<<<<<<< HEAD
     }
     private class MyAdapter extends RecyclerView.Adapter{
 
@@ -45,7 +39,5 @@ public class MainActivity extends Activity {
         public int getItemCount() {
             return 0;
         }
-=======
->>>>>>> 0b77fb012135c2f9b8d17b52470acd6069af4e59
     }
 }
