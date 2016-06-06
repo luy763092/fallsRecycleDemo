@@ -1,6 +1,7 @@
 package com.tianfeng.videoplyer;
 
 import android.app.Activity;
+import android.graphics.Color;
 import android.os.Bundle;
 import android.support.v7.widget.DefaultItemAnimator;
 import android.support.v7.widget.LinearLayoutManager;
@@ -23,7 +24,7 @@ public class MainActivity extends Activity {
 
     private void initData() {
         mDatas = new ArrayList();
-        for (int i = 'A'; i < 'Z'; i++) {
+        for (int i = 'A'; i <= 'Z'; i++) {
             mDatas.add("" + (char) i);
         }
     }
@@ -33,6 +34,8 @@ public class MainActivity extends Activity {
         recyclerView.setLayoutManager(new LinearLayoutManager(this));
         recyclerView.setItemAnimator(new DefaultItemAnimator());
         recyclerView.setAdapter(new HomeAdapter(this, mDatas));
+        recyclerView.addItemDecoration(new RecycleViewDivider(
+                this, LinearLayoutManager.HORIZONTAL, 4,R.color.gray ));
     }
 
 }
