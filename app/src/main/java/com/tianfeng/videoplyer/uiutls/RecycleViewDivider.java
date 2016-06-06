@@ -1,4 +1,4 @@
-package com.tianfeng.videoplyer;
+package com.tianfeng.videoplyer.uiutls;
 
 import android.content.Context;
 import android.content.res.TypedArray;

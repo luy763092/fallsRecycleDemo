@@ -1,4 +1,4 @@
-package com.tianfeng.videoplyer;
+package com.tianfeng.videoplyer.uiutls;
 
 import android.graphics.Canvas;
 import android.graphics.Paint;

@@ -17,6 +17,8 @@ class HomeAdapter extends RecyclerView.Adapter<HomeAdapter.MyViewHolder> {
     private ArrayList<String> Data;
     private Context context;
 
+    private OnItemClickLitener mOnItemClickLitener;
+
     public HomeAdapter(Context con, ArrayList mDates) {
         this.context = con;
         this.Data = mDates;
@@ -30,15 +32,33 @@ class HomeAdapter extends RecyclerView.Adapter<HomeAdapter.MyViewHolder> {
         return holder;
     }
 
-    @Override
-    public void onBindViewHolder(HomeAdapter.MyViewHolder myViewHolder, int position) {
-        myViewHolder.tv.setText(Data.get(position));
-    }
 
+    @Override
+    public void onBindViewHolder(final HomeAdapter.MyViewHolder myViewHolder, final int position) {
+        myViewHolder.tv.setText(Data.get(position));
+        if(mOnItemClickLitener != null){
+        myViewHolder.itemView.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                mOnItemClickLitener.onItemClick(myViewHolder.itemView, position);
+            }
+        });
+        }
+    }
 
     @Override
     public int getItemCount() {
         return Data.size();
+    }
+
+    //条目点击事件
+    public interface OnItemClickLitener {
+        void onItemClick(View view, int position);
+
+    }
+
+    public void setOnItemClickLitener(OnItemClickLitener mOnItemClickLitener) {
+        this.mOnItemClickLitener = mOnItemClickLitener;
     }
 
     class MyViewHolder extends RecyclerView.ViewHolder {
